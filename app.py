@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import yt_dlp
+import os
 
 app = Flask(__name__)
 
@@ -35,13 +36,4 @@ def download():
                     })
 
             return jsonify({
-                'title': info.get('title'),
-                'formats': downloadable_formats
-            })
-
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+                'title': inf
